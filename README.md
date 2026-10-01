@@ -46,8 +46,7 @@ Every finding has a severity: **HIGH / MEDIUM / LOW / INFO / OK**.
 1. **SERVER**: version, edition, CPUs, RAM, uptime
 2. **SUMMARY**: finding count per severity
 3. **FINDINGS**: the prioritized report with recommendations
-4. Detail result sets: **WAITS**, **IO**, **BACKUPS**,
-5. Detail result sets: **WAITS**, **IO**, **BACKUPS**, **MISSING INDEXES**, **TOP QUERIES**, **BLOCKING**
+4. Detail result sets: **WAITS**, **IO**, **BACKUPS**, **MISSING INDEXES**, **TOP QUERIES**, **BLOCKING**
 
 ![Health check report](screenshots/report.png)
 
