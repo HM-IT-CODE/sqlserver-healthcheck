@@ -6,19 +6,19 @@ I built it for a recurring situation: a third-party ERP whose queries you cannot
 
 ## What it checks
 
-| Area | Checks |
-|---|---|
-| Configuration | Max server memory, MAXDOP, cost threshold for parallelism, optimize for ad hoc workloads, instant file initialization |
-| tempdb | Data file count vs CPUs, equal file sizes |
-| Database options | Auto-shrink, auto-close, page verify, automatic statistics, compatibility level, Query Store, percent file growth |
-| Backups | Last full backup, FULL recovery without log backups |
-| Waits | Top waits since startup, with a plain-language interpretation |
-| Storage | Read/write latency per data and log file |
-| Memory | Page life expectancy, memory grants pending |
-| Indexes | Missing indexes (with generated `CREATE INDEX`), fragmentation, unused indexes, large heaps |
-| Statistics | Stale statistics (≥ 20% rows modified) |
-| Queries | Most expensive cached queries by CPU and reads |
-| Blocking | Live blocking snapshot |
+| Area             | Checks                                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Configuration    | Max server memory, MAXDOP, cost threshold for parallelism, optimize for ad hoc workloads, instant file initialization |
+| tempdb           | Data file count vs CPUs, equal file sizes                                                                             |
+| Database options | Auto-shrink, auto-close, page verify, automatic statistics, compatibility level, Query Store, percent file growth     |
+| Backups          | Last full backup, FULL recovery without log backups                                                                   |
+| Waits            | Top waits since startup, with a plain-language interpretation                                                         |
+| Storage          | Read/write latency per data and log file                                                                              |
+| Memory           | Page life expectancy, memory grants pending                                                                           |
+| Indexes          | Missing indexes (with generated `CREATE INDEX`), fragmentation, unused indexes, large heaps                           |
+| Statistics       | Stale statistics (≥ 20% rows modified)                                                                                |
+| Queries          | Most expensive cached queries by CPU and reads                                                                        |
+| Blocking         | Live blocking snapshot                                                                                                |
 
 Every finding has a severity: **HIGH / MEDIUM / LOW / INFO / OK**.
 
@@ -46,7 +46,12 @@ Every finding has a severity: **HIGH / MEDIUM / LOW / INFO / OK**.
 1. **SERVER**: version, edition, CPUs, RAM, uptime
 2. **SUMMARY**: finding count per severity
 3. **FINDINGS**: the prioritized report with recommendations
-4. Detail result sets: **WAITS**, **IO**, **BACKUPS**, **MISSING INDEXES**, **TOP QUERIES**, **BLOCKING**
+4. Detail result sets: **WAITS**, **IO**, **BACKUPS**,
+5. Detail result sets: **WAITS**, **IO**, **BACKUPS**, **MISSING INDEXES**, **TOP QUERIES**, **BLOCKING**
+
+![Health check report](screenshots/report.png)
+
+![Missing indexes with generated CREATE INDEX](screenshots/missing-indexes.png)
 
 ## Try it with the lab
 
